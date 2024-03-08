@@ -1,0 +1,17 @@
+.tile {
+  background-color: gray;
+  border: 1px solid black;
+  width: 45px;
+  height: 45px;
+  font-size: 30px;
+  display: inline;
+}
+
+.tile:hover {
+  cursor: pointer;
+}
+
+.unknown {
+  font-size: 0px;
+  background-color: darkgray;
+}

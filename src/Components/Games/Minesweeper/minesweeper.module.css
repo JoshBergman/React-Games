@@ -1,0 +1,10 @@
+.board {
+  background-color: black;
+  width: fit-content;
+}
+
+.row {
+  width: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+}
