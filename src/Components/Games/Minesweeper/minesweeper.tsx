@@ -5,9 +5,9 @@ import MS_Tile from "./minesweeper-components/ms-tile";
 import { MS, Tboard } from "./minesweeper-components/msClass";
 
 const Minesweeper = () => {
-  const gameWidth = 16;
-  const gameHeight = 16;
-  const gameMineCount = 4;
+  const gameWidth = 10;
+  const gameHeight = 10;
+  const gameMineCount = 5;
   const [board, setBoard] = useState<Tboard>([]);
   const game = useRef(new MS(gameHeight, gameWidth, gameMineCount, setBoard));
 
@@ -54,7 +54,20 @@ const Minesweeper = () => {
       >
         Reset
       </button>
-      <div className={styles.baord}>{renderGameTiles()}</div>
+      <div className={styles.baord}>
+        {renderGameTiles()}
+        <div>
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+            <MS_Tile
+              displayValue={num}
+              x={num}
+              y={num}
+              game={game}
+              key={"MSTILE-" + `${num}, ${num}`}
+            />
+          ))}
+        </div>
+      </div>
       <button
         onClick={() => {
           game.current.leftClick(2, 2);
