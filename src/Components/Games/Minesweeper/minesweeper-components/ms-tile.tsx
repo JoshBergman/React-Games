@@ -1,4 +1,6 @@
 import { LuFlagTriangleLeft } from "react-icons/lu";
+import { FaVirusCovidSlash } from "react-icons/fa6";
+import { GiFlowerEmblem } from "react-icons/gi";
 import { MS } from "./msClass";
 import styles from "./ms-tile.module.css";
 
@@ -43,6 +45,19 @@ const MS_Tile = ({ displayValue, x, y, game }: IMS_TileProps) => {
     }
   };
 
+  const getDisplayIcon = () => {
+    switch (displayValue) {
+      case "F":
+        return <LuFlagTriangleLeft style={{ marginTop: "5px" }} />;
+      case "K":
+        return <FaVirusCovidSlash style={{ marginTop: "5px", color: "red" }} />;
+      case "L":
+        return <GiFlowerEmblem style={{ marginTop: "5px", color: "black" }} />;
+      default:
+        return displayValue;
+    }
+  };
+
   return (
     <div
       className={styles.tile + " " + styles[getCellStyle()]}
@@ -55,11 +70,7 @@ const MS_Tile = ({ displayValue, x, y, game }: IMS_TileProps) => {
         game.current.rightClick(x, y);
       }}
     >
-      {displayValue === "F" ? (
-        <LuFlagTriangleLeft style={{ marginTop: "5px" }} />
-      ) : (
-        displayValue
-      )}
+      {getDisplayIcon()}
     </div>
   );
 };

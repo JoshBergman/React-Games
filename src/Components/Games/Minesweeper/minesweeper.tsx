@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { FaSmile } from "react-icons/fa";
 
 import styles from "./minesweeper.module.css";
 import MS_Tile from "./minesweeper-components/ms-tile";
@@ -45,36 +46,16 @@ const Minesweeper = () => {
   };
 
   return (
-    <div>
-      <h2>Minesweeper</h2>
+    <div className={styles.gameDiv}>
       <button
         onClick={() => {
           game.current.resetGame(gameHeight, gameWidth, gameMineCount);
         }}
+        className={styles.smileyButton}
       >
-        Reset
+        <FaSmile className={styles.face} />
       </button>
-      <div className={styles.baord}>
-        {renderGameTiles()}
-        <div>
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-            <MS_Tile
-              displayValue={num}
-              x={num}
-              y={num}
-              game={game}
-              key={"MSTILE-" + `${num}, ${num}`}
-            />
-          ))}
-        </div>
-      </div>
-      <button
-        onClick={() => {
-          game.current.leftClick(2, 2);
-        }}
-      >
-        Pop Cell
-      </button>
+      <div className={styles.baord}>{renderGameTiles()}</div>
     </div>
   );
 };

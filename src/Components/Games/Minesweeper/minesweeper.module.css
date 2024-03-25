@@ -1,10 +1,43 @@
+.gameDiv {
+  width: fit-content;
+  position: absolute;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .board {
   background-color: black;
   width: fit-content;
+  text-align: center;
 }
 
 .row {
   width: fit-content;
   display: flex;
   justify-content: space-evenly;
+}
+
+.face {
+  margin: 0;
+  padding: 0;
+  color: yellow;
+  font-size: 50px;
+}
+
+.face:hover {
+  color: rgb(214, 214, 13);
+  cursor: pointer;
+}
+
+.smileyButton {
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+
+  margin: 0 auto;
+  background-color: transparent;
+  border: none;
 }

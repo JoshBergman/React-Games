@@ -5,6 +5,8 @@
   height: 40px;
   font-size: 33px;
   display: inline;
+  text-align: center;
+  line-height: 38px;
 }
 
 .tile:hover {
