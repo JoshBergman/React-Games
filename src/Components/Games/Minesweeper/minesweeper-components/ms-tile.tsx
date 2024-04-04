@@ -26,12 +26,13 @@ const MS_Tile = ({ displayValue, x, y, game }: IMS_TileProps) => {
       case 0:
         return "transparent";
       case 1:
-        return "blue";
+        return "rgb(20, 20, 193)";
       case 2:
         return "green";
       case "F":
-      case 3:
         return "crimson";
+      case 3:
+        return "rgb(173, 12, 44)";
       case 4:
         return "navy";
       case 5:

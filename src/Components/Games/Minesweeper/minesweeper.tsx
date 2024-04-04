@@ -6,9 +6,9 @@ import MS_Tile from "./minesweeper-components/ms-tile";
 import { MS, Tboard } from "./minesweeper-components/msClass";
 
 const Minesweeper = () => {
-  const gameWidth = 10;
-  const gameHeight = 10;
-  const gameMineCount = 5;
+  const gameWidth = 16;
+  const gameHeight = 16;
+  const gameMineCount = 40;
   const [board, setBoard] = useState<Tboard>([]);
   const game = useRef(new MS(gameHeight, gameWidth, gameMineCount, setBoard));
 
